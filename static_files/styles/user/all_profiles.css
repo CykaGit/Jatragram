@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+body{
+    background-color: #171717 !important;
+    font-family: Montserrat;
+}
+.profile__pic{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    overflow: hidden;
+}

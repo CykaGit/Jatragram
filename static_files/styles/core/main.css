@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+.nav__insta__logo{
+    height: 50px;
+    width: 120px;
+}
+
+.search__input input{
+    font-size: 16px;
+    height: 28px;
+    background: lightgrey;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    outline: 0;
+    overflow: hidden;
+    padding: 9px 0 7px 8px;
+    text-overflow: ellipsis;
+    color: rgba(var(--i1d,38,38,38),1);
+    font-family: Montserrat;
+    font-size: 14px;
+    line-height: 18px;
+}

@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %} {% load static %} {% block extra_head %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/core/post_card.css' %}" />
+{% endblock %} {% block content %}
+
+<!-- Messages -->
+{% if messages %} {% for message in messages %}
+<div class="alert alert-success w-50 mt-4 mx-auto text-center {{ message.tags }}" role="alert" style="
+    font-size: 13px;
+    background-color: #1d1d1d;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgba(26, 26, 26, 0.12);
+    color: #fff;
+  ">
+    {{ message }}
+</div>
+{% endfor %} {% endif %}
+<style>
+    input::file-selector-button {
+        font-size: small;
+        color: #6c757d;
+        padding: 0.5em;
+        border: 1px solid lightgrey;
+        border-radius: 2px;
+    }
+
+    #id_text{
+        background-color: lightgrey;
+        border: none;
+    }
+</style>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <div class="card mx-auto mb-4" style="max-width: 32rem">
+                <div class="card-body">
+                    <div>
+                        <!-- Post Create Form -->
+                        <form method="POST" action="{% url 'post_create_view' %}" enctype="multipart/form-data"
+                            style="font-family: Montserrat">
+                            <h3 style="padding-bottom: 15px; color: #fff">
+                                <b>Create a post</b>
+                            </h3>
+                            {% csrf_token %} {% for field in form %}
+                            <div class="mb-2" style="color: #fff">{{ field }}</div>
+                            {% endfor %}
+                            <button class="btn btn-sm btn-primary" type="submit"
+                                style="background-color: rgb(42, 77, 142); border: none">
+                                Post
+                            </button>
+                        </form>
+                        <!-- Post Create Form End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <!-- All the posts in database -->
+            {% for post in all_posts %}
+
+            <!-- Single Posts Card -->
+            {% include 'components/post_card.html' %} {% endfor %}
+            <!-- All the posts in database -->
+        </div>
+    </div>
+</div>
+{% endblock %}

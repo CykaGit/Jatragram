@@ -1,0 +1,10 @@
+asgiref==3.7.2
+Django==3.2.25
+django-crum==0.7.9
+django-extensions==3.2.3
+Pillow==9.5.0
+pydot==2.0.0
+pyparsing==3.1.2
+pytz==2024.1
+sqlparse==0.4.4
+typing-extensions==4.7.1
